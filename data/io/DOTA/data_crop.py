@@ -196,11 +196,15 @@ def clip_image(file_idx, image, boxes_all, width, height, stride_w, stride_h):
 
 
 print('class_list', len(class_list))
-raw_data = '/data/dataset/DOTA/train/'
-raw_images_dir = os.path.join(raw_data, 'images', 'images')
-raw_label_dir = os.path.join(raw_data, 'labelTxt', 'labelTxt')
+# raw_data = '/data/dataset/DOTA/train/'
+# raw_images_dir = os.path.join(raw_data, 'images', 'images')
+# raw_label_dir = os.path.join(raw_data, 'labelTxt', 'labelTxt')
+raw_data = '/fdisk/DOTA/train/'
+raw_images_dir = os.path.join(raw_data, '.', 'images')
+raw_label_dir = os.path.join(raw_data, '.', 'labelTxt')
 
-save_dir = '/data/dataset/DOTA/DOTA1.0/trainval/'
+
+save_dir = '/fdisk/data/dataset/DOTA/DOTA1.0/trainval/'
 
 images = [i for i in os.listdir(raw_images_dir) if 'png' in i]
 labels = [i for i in os.listdir(raw_label_dir) if 'txt' in i]

@@ -84,7 +84,8 @@ elif cfgs.DATASET_NAME.startswith('DOTA'):
         'ground-track-field': 12,
         'bridge': 13,
         'basketball-court': 14,
-        'baseball-diamond': 15
+        'baseball-diamond': 15,
+        'container-crane':16
     }
 elif cfgs.DATASET_NAME == 'coco':
     NAME_LABEL_MAP = get_coco_label_dict()

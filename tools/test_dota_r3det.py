@@ -55,7 +55,7 @@ def worker(gpu_id, images, det_net, args, result_queue):
 
     config = tf.ConfigProto()
     config.gpu_options.allow_growth = True
-
+    config.gpu_options.per_process_gpu_memory_fraction = 0.6
     with tf.Session(config=config) as sess:
         sess.run(init_op)
         if not restorer is None:

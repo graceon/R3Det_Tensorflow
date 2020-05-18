@@ -305,6 +305,7 @@ def train():
         tfconfig = tf.ConfigProto(
             allow_soft_placement=True, log_device_placement=False)
         tfconfig.gpu_options.allow_growth = True
+        tfconfig.gpu_options.per_process_gpu_memory_fraction = 0.6
         with tf.Session(config=tfconfig) as sess:
             sess.run(init_op)
 

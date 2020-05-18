@@ -56,11 +56,20 @@ def read_xml_gtbox_and_label(xml_path):
             label = None
             for child_item in child_of_root:
                 if child_item.tag == 'name':
+                    # print(__file__,sys._getframe().f_lineno)
+                    # print(NAME_LABEL_MAP)
+                    # print(__file__,sys._getframe().f_lineno)
+                    # print(child_item.text)
+                    # print(child_item)
                     label = NAME_LABEL_MAP[child_item.text]
                 if child_item.tag == 'bndbox':
                     tmp_box = []
                     for node in child_item:
-                        tmp_box.append(int(node.text))
+                        # print(__file__,sys._getframe().f_lineno)
+                        # print('node',node.text)
+                        # print('node',type(node.text))
+                        # tmp_box.append(int(node.text))
+                        tmp_box.append(int(float(node.text)))
                     assert label is not None, 'label is none, error'
                     tmp_box.append(label)
                     box_list.append(tmp_box)
